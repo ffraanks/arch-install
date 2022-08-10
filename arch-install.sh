@@ -63,8 +63,7 @@ fstab_gen(){
 }
 
 arch_chroot_enter(){
-  clear && read -p '[!] - ENTRE NO CHROOT DIGITANDO: arch-chroot /mnt (PRESSIONE ENTER PARA CONTINUAR...)'
-}
+  clear && echo -e "[!] - ENTRE NO CHROOT DIGITANDO: arch-chroot /mnt"
 
 font_system
 format_disk
