@@ -6,7 +6,7 @@
 
 font_system(){
   clear
-  echo -e "[!] - Aumentando o tamanho da fonte do sistema\n"
+  echo -e "[!] - Aumentando o tamanho da fonte do archiso\n"
   sleep 2
   setfont lat4-19
 }
