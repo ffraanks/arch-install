@@ -4,7 +4,7 @@
 # Franklin Souza
 # @FranklinTech
 
-main(){
+init(){
   clear
   cat << Warning
   AVISO: Esse script foi criado/desenvolvido para minha própria instalação tudo aqui foi pensando EM MIM, caso você venha a usa-lo, por favor sinta-se livre em abri-lo e ler o código fonte, NÃO ME RESPOSABILIZO POR DANOS, caso queira instalar o Arch Linux, recomendo a documentção oficial: https://wiki.archlinux.org/title/Installation_guide_(Portugu%C3%AAs)
@@ -13,8 +13,8 @@ main(){
   dev/sda1 - EFI - BOOT
   dev/sda2 - / (BTRFS)
 Warning
-}
 printf "\n\n" && read -p 'PRESSIONE ENTER PARA CONTINUAR...'
+}
 
 font_system(){
   clear
@@ -188,7 +188,7 @@ finish_install(){
   clear && read -p 'Instalação finalizada, NÃO ESQUEÇA DE SAIR DO CHROOT E REBOOTAR O PC!!! PRESSIONE ENTER PARA CONTINUAR...' && exit 0
 }
 
-main
+init
 font_system
 format_disk
 subvolumes
