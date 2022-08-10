@@ -7,11 +7,11 @@
 #init(){
   #clear
   #cat << Warning
-AVISO: Esse script foi criado/desenvolvido para minha própria instalação tudo aqui foi pensando EM MIM, caso você venha a usa-lo, por favor sinta-se livre em abri-lo e ler o código fonte, NÃO ME RESPOSABILIZO POR DANOS, caso queira instalar o Arch Linux, recomendo a documentção oficial: https://wiki.archlinux.org/title/Installation_guide_(Portugu%C3%AAs)
-Eu utilizo o Filesystem BTRFS minha montagem é simples:
+#AVISO: Esse script foi criado/desenvolvido para minha própria instalação tudo aqui foi pensando EM MIM, caso você venha a usa-lo, por favor sinta-se livre em abri-lo e ler o código fonte, NÃO ME RESPOSABILIZO POR DANOS, caso queira instalar o Arch Linux, recomendo a documentção oficial: https://wiki.archlinux.org/title/Installation_guide_(Portugu%C3%AAs)
+#Eu utilizo o Filesystem BTRFS minha montagem é simples:
 
-dev/sda1 - EFI - BOOT
-dev/sda2 - / (BTRFS)
+#dev/sda1 - EFI - BOOT
+#dev/sda2 - / (BTRFS)
 #Warning
   #printf "\n\n" && read -p 'PRESSIONE ENTER PARA CONTINUAR...'
 #}
