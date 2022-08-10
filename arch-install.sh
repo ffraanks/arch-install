@@ -63,7 +63,6 @@ fstab_gen(){
 }
 
 arch_chroot_enter(){
-  clear
   clear && read -p '[!] - ENTRE NO CHROOT DIGITANDO: arch-chroot /mnt (PRESSIONE ENTER PARA CONTINUAR...)'
 }
 
