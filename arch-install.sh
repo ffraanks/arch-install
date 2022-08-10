@@ -11,7 +11,7 @@ font_system(){
   clear
   echo -e "[ ] - Aumentando o tamanho da fonte do sistema\n"
   sleep 2
-  setfon lat4-19
+  setfont lat4-19
 }
 
 format_disk(){
@@ -19,10 +19,10 @@ format_disk(){
   echo -e "[ ] - Formatando os dicos\n"
   sleep 2
   mkfs.vfat -F32 /dev/sda1
-  mkfs.btrfs - /dev/sda2
+  mkfs.btrfs -f /dev/sda2
 }
 
-crate_subvolumes(){
+subvolumes(){
   clear
   echo -e "[ ] - Criando subvolumes em btrfs\n"
   sleep 2
@@ -44,9 +44,9 @@ mount_partitions(){
   mkdir /mnt/home
   mkdir /mnt/var
   mkdir /mnt/.snapshots
-  mount -o defaults,compress=lzo,nossd,autodefrag,subvol=@home /dev/sda2 /mnt/home
-  mount -o defaults,compress=lzo,nossd,autodefrag,subvol=@var /dev/sda2 /mnt/var
-  mount -o defaults,compress=lzo,nossd,autodefrag,subvol=@snapshots /dev/sda2 /mnt/.snapshots
+  mount -o defaults,compress=zstd,nossd,autodefrag,subvol=@home /dev/sda2 /mnt/home
+  mount -o defaults,compress=zstd,nossd,autodefrag,subvol=@var /dev/sda2 /mnt/var
+  mount -o defaults,compress=zstd,nossd,autodefrag,subvol=@snapshots /dev/sda2 /mnt/.snapshots
   mount /dev/sda1 /mnt/boot/efi
 }
 pacstrap_arch(){
@@ -74,3 +74,11 @@ pacman -S wget --noconfirm
 wget -c "https://github.com/ffraanks/arch-chroot/raw/master/arch-chroot.sh" && chmod +x arch-chroot.sh && ./arch-chroot.sh
 }
 
+layout_keyboard
+font_system
+format_disk
+subvolumes
+mount_partitions
+pacstrap_arch
+fstab_gen
+arch-chroot_enter
