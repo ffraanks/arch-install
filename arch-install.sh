@@ -46,6 +46,7 @@ mount_partitions(){
   mount -o defaults,compress=zstd,nossd,autodefrag,subvol=@snapshots /dev/sda2 /mnt/.snapshots
   mount /dev/sda1 /mnt/boot/efi
 }
+
 pacstrap_arch(){
   clear
   echo -e "[!] - Instalando os pacotes base do Arch Linux\n"
@@ -64,6 +65,7 @@ fstab_gen(){
 
 arch_chroot_enter(){
   clear && echo -e "[!] - ENTRE NO CHROOT DIGITANDO: arch-chroot /mnt"
+  sleep 2
 }
 
 font_system
