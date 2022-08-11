@@ -6,7 +6,7 @@
 
 format_disk(){
   clear
-  echo -e "[!] - Formatando os dicos\n"
+  echo -e "[!] - Formatando os discos\n"
   sleep 2
   mkfs.vfat -F32 /dev/sda1
   mkfs.btrfs -f /dev/sda2
@@ -27,7 +27,7 @@ subvolumes(){
 
 mount_partitions(){
   clear
-  echo -e "[!] - Montando partições\n"
+  echo -e "[!] - Montando as partições\n"
   sleep 2
   mount -o defaults,compress=zstd,nossd,autodefrag,subvol=@ /dev/sda2 /mnt
   mkdir -p /mnt/boot/efi
