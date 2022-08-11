@@ -4,13 +4,6 @@
 # Franklin Souza
 # @FranklinTech
 
-font_system(){
-  clear
-  echo -e "[!] - Aumentando o tamanho da fonte do archiso\n"
-  sleep 2
-  setfont lat4-19
-}
-
 format_disk(){
   clear
   echo -e "[!] - Formatando os dicos\n"
@@ -68,7 +61,6 @@ arch_chroot_enter(){
   sleep 2
 }
 
-font_system
 format_disk
 subvolumes
 mount_partitions
