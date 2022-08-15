@@ -4,6 +4,7 @@
 # Franklin Souza
 # @FranklinTech
 
+# Formatação de discos
 format_disk(){
   clear
   echo -e "[!] - Formatando os discos\n"
@@ -12,6 +13,7 @@ format_disk(){
   mkfs.btrfs -f /dev/sda2
 }
 
+# Criação de subvolumes
 subvolumes(){
   clear
   echo -e "[!] - Criando subvolumes em btrfs\n"
@@ -25,6 +27,7 @@ subvolumes(){
   umount /mnt
 }
 
+# Montando as partições
 mount_partitions(){
   clear
   echo -e "[!] - Montando as partições\n"
@@ -40,6 +43,7 @@ mount_partitions(){
   mount /dev/sda1 /mnt/boot/efi
 }
 
+# Instalando pacotes base do Arch Linux
 pacstrap_arch(){
   clear
   echo -e "[!] - Instalando os pacotes base do Arch Linux\n"
@@ -49,6 +53,7 @@ pacstrap_arch(){
   pacstrap /mnt base dhcpcd neovim linux-firmware base-devel
 }
 
+# Gerando o fstab
 fstab_gen(){
   clear
   echo -e "[!] - Gerando o Fstab\n"
@@ -56,6 +61,7 @@ fstab_gen(){
   genfstab /mnt >> /mnt/etc/fstab
 }
 
+# Entrando no chroot
 arch_chroot_enter(){
   clear && echo -e "[!] - ENTRE NO CHROOT DIGITANDO: arch-chroot /mnt"
   sleep 2
